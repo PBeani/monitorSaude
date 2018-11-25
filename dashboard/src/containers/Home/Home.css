@@ -1,0 +1,6 @@
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    padding:  0 100px;
+    justify-content: space-between;
+}

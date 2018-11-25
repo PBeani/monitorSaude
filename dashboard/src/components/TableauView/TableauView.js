@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tableau from 'tableau-api';
-import classes from './TableauDashboard.css';
+import './TableauView.css';
 
 
   class TableauDashboard extends Component {
@@ -11,7 +11,7 @@ import classes from './TableauDashboard.css';
     
     
     initViz() {  
-      const vizUrl = 'https://public.tableau.com/views/Livro1_1047/Painel1?:embed=y&:display_count=yes&publish=yes';  
+      const vizUrl = this.props.url;  
       const vizContainer = this.vizContainer;  
       let viz = new window.tableau.Viz(vizContainer, vizUrl)  
     }  

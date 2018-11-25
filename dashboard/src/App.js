@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route path='/home' component={Dashboard}></Route>
+        <Route path='/dashboard' component={Dashboard}></Route>
       </Switch>
     )
   }

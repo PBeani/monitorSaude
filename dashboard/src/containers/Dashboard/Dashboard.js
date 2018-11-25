@@ -1,31 +1,24 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import TableauDashboard from '../../components/TableauDashboard/TableauDashboard';
 import Auxiliar from '../../hoc/auxiliar';
 import Menu from '../../components/Menu/Menu';
+import Home from '../Home/Home';
 
 class Dashboard extends Component {
     state = {
         routes: [
-            { label: 'Febre Amarela', path: '/febreAmarela', component: null },
-            { label: 'Hepatite', path: '/hepatite', component: null },
-            { label: 'Dengue', path: '/dengue', component: null },
-            { label: 'Hipertensão', path: '/hipertensao', component: null },
-            { label: 'Diabetes Tipo 1', path: '/diabetesT1', component: null },
-            { label: 'Diabetes Tipo 2', path: '/diabetesT2', component: null },
-            { label: 'Sífilis Congênita', path: '/sifilisCongenita', component: null },
-            { label: 'Hipertensão e Diabetes', path: '/hipertensaoDiabetes', component: null },
+            { label: 'Home', path: '/home', component: Home },
         ]
     };
 
     render() {
-        const { path } = { ...this.props };
+        const { path } = { ...this.props.match };
         const { routes } = { ...this.state };
+        
         return (
             <Auxiliar>
                 <Menu routes={routes} path={this.props.match.path} />
-                <TableauDashboard path={this.props.match.path} />
-                <section className="tableau-holder">
+                <section>
                     <Switch>
                         {routes.map((route, index) =>
                             <Route key={index} path={path + route.path} component={route.component} />
