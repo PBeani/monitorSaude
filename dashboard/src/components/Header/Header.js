@@ -2,10 +2,11 @@ import React from 'react';
 import './Header.css';
 
 const Header = props => {
-    const { routes, path } = { ...props };
 
     return (
         <header>
+            <div class="logo"></div>
+            <h1>Monitor de saúde</h1>
         </header>
     )
 };

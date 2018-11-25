@@ -6,7 +6,7 @@ const tableauHolder = (props) => {
     const hideClass = props.show ? '' : 'hide';
 
     return (
-        <div className={"viewHolder" + ' ' + (props.className || '') + ' ' + hideClass}>
+        <div className={'viewHolder  ' + (props.className || '') + ' ' + hideClass}>
             <h3>{props.title}</h3>
             <TableauView url={props.url} />
         </div>
