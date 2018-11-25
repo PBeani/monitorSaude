@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import TableauDashboard from '../../components/TableauDashboard/TableauDashboard';
 import Auxiliar from '../../hoc/auxiliar';
 import Menu from '../../components/Menu/Menu';
 
@@ -22,10 +23,11 @@ class Dashboard extends Component {
         const { routes } = { ...this.state };
         return (
             <Auxiliar>
-                <Menu routes={routes}  path={this.props.match.path} />
+                <Menu routes={routes} path={this.props.match.path} />
+                <TableauDashboard path={this.props.match.path} />
                 <section className="tableau-holder">
                     <Switch>
-                        {routes.map( (route, index) => 
+                        {routes.map((route, index) =>
                             <Route key={index} path={path + route.path} component={route.component} />
                         )}
                     </Switch>
