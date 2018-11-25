@@ -9,7 +9,6 @@ import './TableauView.css';
       this.initViz()  
     }  
     
-    
     initViz() {  
       const vizUrl = this.props.url;  
       const vizContainer = this.vizContainer;  

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import Auxiliar from '../../hoc/auxiliar';
-import Menu from '../../components/Menu/Menu';
+import Header from '../../components/Header/Header';
 import Home from '../Home/Home';
+import './Dashboard.css';
 
 class Dashboard extends Component {
     state = {
@@ -14,10 +15,10 @@ class Dashboard extends Component {
     render() {
         const { path } = { ...this.props.match };
         const { routes } = { ...this.state };
-        
+
         return (
             <Auxiliar>
-                <Menu routes={routes} path={this.props.match.path} />
+                <Header />
                 <section>
                     <Switch>
                         {routes.map((route, index) =>
